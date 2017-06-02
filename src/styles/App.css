@@ -45,6 +45,32 @@ body {
   background-color: #ddd;
 }
 
+.img-figure {
+  position: absolute;
+  z-index: 102;
+  width: 320px;
+  height: 360px;
+  padding: 40px;
+  margin: 0px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.img-figure img {
+  width: 240px;
+  height: 240px;
+}
+
+.img-figure figcaption {
+  text-align: center;
+}
+
+.img-figure .img-title{
+  margin: 20px 0 0 0;
+  color: #a7a0a2;
+  font-size: 16px;
+}
+
 /*image --end*/
 
 /*controller --start*/

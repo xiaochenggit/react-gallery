@@ -2,10 +2,11 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import ImgFigure from './imgFigure';
 
 // 图片数据 json
 
-let imageDatas = require('../data/imageData.json');
+let imageDatas = require('json!../data/imageData.json');
 // let yeomanImage = require('../images/yeoman.png');
 
 /**
@@ -17,7 +18,7 @@ imageDatas = (function(imageDataArr) {
 
 	for ( var i = 0, length = imageDataArr.length; i < length; i ++ ) {
 		var singleImageData = imageDataArr[i];
-		singleImageData.imageURL = require('../images/' + singleImageData.filename);
+		singleImageData.imageURL = require('../images/' + singleImageData.fileName);
 		imageDataArr[i] = singleImageData;
 	}
 
@@ -25,11 +26,17 @@ imageDatas = (function(imageDataArr) {
 })(imageDatas)
 
 class AppComponent extends React.Component {
+  componentDidMount() {
+  	console.log(imageDatas);
+  }
   render() {
     return (
       <div className="index">
         <section className="stage">
         	<section className="img-sec">
+        		{
+        			imageDatas.map((item, index) => <ImgFigure data={item} key={index}></ImgFigure>)
+        		}
         	</section>
         	<section className="controller-nav">
         	</section>
