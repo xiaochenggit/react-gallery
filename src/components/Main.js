@@ -268,11 +268,15 @@ class AppComponent extends React.Component {
    * [getRangeRandom 区间随机数]
    * @param  {[Number]} low  [小值]
    * @param  {[Number]} high [大值]
-   * @return {[type]}      [description]
+   * @return {[Number]}      [返回数值]
    */
   getRangeRandom(low, high) {
     return Math.ceil(Math.random() * (high - low) + low);
   }
+  /**
+   * [get30Rotate 随机正负 -30 - 30 之间的数]
+   * @return {[Number]} [返回数值]
+   */
   get30Rotate() {
     return (Math.random() > 0.5 ? '' : '-') + Math.round(Math.random() * 30)
   }
