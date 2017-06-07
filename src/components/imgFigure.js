@@ -18,7 +18,6 @@ class ImgFigure extends Component {
 		}
 		event.stopPropagation();
 		event.preventDefault();
-		
 	}
 	render() {
 		var imgFigureClassName = 'img-figure';

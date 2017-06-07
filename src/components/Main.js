@@ -222,7 +222,7 @@ class AppComponent extends React.Component {
 
     // 上侧区域 取1个或者不取
     imgArrangeTopArr = [],
-    topImgNum = Math.ceil(Math.random() * 2),
+    topImgNum = Math.floor(Math.random() * 2),
     topImgSpliceIndex = 0,
     // 中心图片
     imgsArrangeCenterArr = imgsArrangeArr.splice(centerIndex, 1);
@@ -268,9 +268,6 @@ class AppComponent extends React.Component {
     // 上部分扔进去
     if (imgArrangeTopArr[0]) {
         imgsArrangeArr.splice(topImgSpliceIndex, 0, imgArrangeTopArr[0]);
-    }
-    if (imgArrangeTopArr[1]) {
-      imgsArrangeArr.splice(topImgSpliceIndex + 1, 0, imgArrangeTopArr[1]);
     }
     // center 扔进去
     imgsArrangeArr.splice(centerIndex, 0, imgsArrangeCenterArr[0]);
@@ -326,7 +323,7 @@ class AppComponent extends React.Component {
         	</section>
         	<section className="controller-nav">
             {
-              imageDatas.map((item, index) => <ControllerUnit key={index}/>)
+              imageDatas.map((item, index) => <ControllerUnit key={index} range={this.state.imgsArrangeArr[index]} inverse={this.inverse(index).bind(this)} center={this.center(index).bind(this)} />)
             }
         	</section>
         </section>
